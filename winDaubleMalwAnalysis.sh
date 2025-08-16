@@ -26,26 +26,26 @@ OUTDIR="${EXE}_analysis"
 mkdir -p "$OUTDIR"
 
 # Basic recon
-echo -e "\n[1] Hash"
+# 1) capa 
+echo -e "\n[1] Capa launched, please wait..."
+capa "$EXE" | tee "$OUTDIR/capa.txt"
+echo -e "\n[2] Hash"
 echo ">> SHA256SUM <<"
 sha256sum "$EXE" | tee "$OUTDIR/sha256.txt"
 echo -e "\n>> MD5SUM <<"
 md5sum "$EXE"     | tee "$OUTDIR/md5.txt"
 
 ##############
-echo -e "\n[2] Quick infos"
+echo -e "\n[3] Quick infos"
 rabin2 -I "$EXE" | tee "$OUTDIR/info.txt"
 rabin2 -S "$EXE" > "$OUTDIR/sections.txt"
 rabin2 -i "$EXE" > "$OUTDIR/imports.txt"
 rabin2 -rs "$EXE" > "$OUTDIR/resources.txt"
 rabin2 -E "$EXE" > "$OUTDIR/entrypoint.txt"
 
-# 3) Encoded strings
-echo -e "\n[3] Floss launched, please wait..."
+# 4) Encoded strings
+echo -e "\n[4] Floss launched, please wait..."
 floss -q "$EXE" > "$OUTDIR/floss.txt"
 
-# 4) capa 
-echo -e "\n[4] Capa launched, please wait..."
-capa "$EXE" > "$OUTDIR/capa.txt"
 
 echo -e "\n\n[[ Analysis Over, find the ressources in the folder $OUTDIR ]]"
