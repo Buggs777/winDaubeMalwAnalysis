@@ -36,7 +36,7 @@ sudo apt update
 sudo apt install -y coreutils radare2 python3-pip
 ```
 
-#### Install FLOSS (prebuilt release)
+#### Install FLOSS & CAPA (prebuilt release)
 
 Instead of building FLOSS from source or using pip, just download the latest precompiled binary:
 
@@ -52,6 +52,11 @@ wget [https://github.com/mandiant/flare-floss/releases/download/v3.1.1/floss-v3.
 unzip floss-v3.1.1-linux.zip
 chmod +x floss
 sudo mv floss /usr/local/bin/
+
+wget https://github.com/mandiant/capa/releases/download/v9.2.1/capa-v9.2.1-linux.zip
+unzip capa-v9.2.1-linux.zip
+chmod +x capa
+sudo mv capa /usr/local/bin/
 ```
 
 ### Usage
