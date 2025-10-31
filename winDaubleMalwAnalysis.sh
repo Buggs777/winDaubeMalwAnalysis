@@ -45,7 +45,7 @@ rabin2 -E "$EXE" > "$OUTDIR/entrypoint.txt"
 
 # 4) Encoded strings
 echo -e "\n[4] Floss launched, please wait..."
-floss -q "$EXE" > "$OUTDIR/floss.txt"
+floss -L -q "$EXE" > "$OUTDIR/floss.txt"
 
 
 echo -e "\n\n[[ Analysis Over, find the ressources in the folder $OUTDIR ]]"
