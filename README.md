@@ -48,7 +48,8 @@ Make it executable and put it in your $PATH:
 
 ## Example
 ```bash
-wget https://github.com/mandiant/flare-floss/releases/download/v3.1.1/floss-v3.1.1-linux -O floss
+wget [https://github.com/mandiant/flare-floss/releases/download/v3.1.1/floss-v3.1.1-linux.zip](https://github.com/mandiant/flare-floss/releases/download/v3.1.1/floss-v3.1.1-linux.zip)
+unzip floss-v3.1.1-linux.zip
 chmod +x floss
 sudo mv floss /usr/local/bin/
 ```
